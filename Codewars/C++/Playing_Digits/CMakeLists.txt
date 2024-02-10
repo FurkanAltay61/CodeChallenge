@@ -1,0 +1,5 @@
+set(CMAKE_CXX_FLAGS, "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
+add_library(Playing_Digits_library Playing_Digits.cpp)
+add_executable(Playing_Digits_test test.cpp)
+target_link_libraries(Playing_Digits_test PRIVATE Playing_Digits_library)
+add_test(NAME Playing_DigitsTest COMMAND Playing_Digits_test)
