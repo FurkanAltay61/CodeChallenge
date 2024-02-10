@@ -1,0 +1,5 @@
+set(CMAKE_CXX_FLAGS, "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
+add_library(directionsreduction_library Directions_Reduction.cpp)
+add_executable(directionsreduction_test test.cpp)
+target_link_libraries(directionsreduction_test PRIVATE directionsreduction_library)
+add_test(NAME DirectionsReductionTest COMMAND directionsreduction_test)
