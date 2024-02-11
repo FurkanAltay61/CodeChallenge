@@ -1,0 +1,5 @@
+set(CMAKE_CXX_FLAGS, "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
+add_library(Rot13_library Rot13.cpp)
+add_executable(Rot13_test test.cpp)
+target_link_libraries(Rot13_test PRIVATE Rot13_library)
+add_test(NAME Rot13Test COMMAND Rot13_test)
