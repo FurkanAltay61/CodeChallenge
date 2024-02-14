@@ -1,0 +1,5 @@
+set(CMAKE_CXX_FLAGS, "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
+add_library(PersistentBugger_library PersistentBugger.cpp)
+add_executable(PersistentBugger_test test.cpp)
+target_link_libraries(PersistentBugger_test PRIVATE PersistentBugger_library)
+add_test(NAME PersistentBuggerTest COMMAND PersistentBugger_test)
